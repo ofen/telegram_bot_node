@@ -1,0 +1,28 @@
+{  
+    "appenders":{  
+        "stdout":{  
+            "type":"stdout",
+            "layout":{  
+                "type":"pattern",
+                "pattern":"[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m"
+            }
+        },
+        "file":{  
+            "type":"file",
+            "filename":"chat.log",
+            "layout":{  
+                "type":"pattern",
+                "pattern":"[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m"
+            }
+        }
+    },
+    "categories":{  
+        "default":{  
+            "appenders":[  
+                "stdout",
+                "file"
+            ],
+            "level":"debug"
+        }
+    }
+}

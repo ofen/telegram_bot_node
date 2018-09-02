@@ -13,13 +13,7 @@ process.env.NTBA_FIX_319 = 1;
 // Issue 350
 process.env.NTBA_FIX_350 = 1;
 // Logging config
-log4js.configure({
-  appenders: {
-    console: { type: 'stdout', layout: { type: 'pattern', pattern: '[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m' } },
-    file: { type: 'file', filename: 'chat.log', layout: { type: 'pattern', pattern: '[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m' } },
-  },
-  categories: { default: { appenders: ['console', 'file'], level: 'debug' } }
-});
+log4js.configure('./config.json');
 
 const logger = log4js.getLogger('Bot');
 
