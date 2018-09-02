@@ -13,10 +13,6 @@ process.env.NTBA_FIX_319 = 1;
 // Issue 350
 process.env.NTBA_FIX_350 = 1;
 // Logging config
-// log4js.configure({
-//   appenders: { out: { type: 'stdout', layout: { type: 'pattern', pattern: '[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m' } } },
-//   categories: { default: { appenders: ['out'], level: 'debug' } }
-// });
 log4js.configure({
   appenders: {
     console: { type: 'stdout', layout: { type: 'pattern', pattern: '[%d{dd.MM.yyyy-hh:mm:ss}][%p] %c - %m' } },
@@ -69,7 +65,7 @@ function state_update(msg, user_state) {
   state[msg.from.id] = user_state;
 }
 
-// Chat logging
+// Logging
 bot.on('message', (msg) => {
   if (!state[msg.from.id]) {
     state_init(msg);
